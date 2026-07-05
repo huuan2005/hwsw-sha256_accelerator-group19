@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="sha256_core" xd:componentRef="sha256_core" xd:initiationInterval="x" xd:clockPeriod="15.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="data_in.data" xd:originalName="data_in" xd:direction="in" xd:interfaceRef="data_in" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="data_in.keep" xd:originalName="data_in" xd:direction="in" xd:interfaceRef="data_in" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="data_in.strb" xd:originalName="data_in" xd:direction="in" xd:interfaceRef="data_in" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="data_in.last" xd:originalName="data_in" xd:direction="in" xd:interfaceRef="data_in" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="hash_out.data" xd:originalName="hash_out" xd:direction="out" xd:interfaceRef="hash_out" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="hash_out.keep" xd:originalName="hash_out" xd:direction="out" xd:interfaceRef="hash_out" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="hash_out.strb" xd:originalName="hash_out" xd:direction="out" xd:interfaceRef="hash_out" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="hash_out.last" xd:originalName="hash_out" xd:direction="out" xd:interfaceRef="hash_out" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="num_blocks" xd:originalName="num_blocks" xd:direction="in" xd:interfaceRef="s_axi_CTRL" xd:busTypeRef="axilite" xd:offset="0x10" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="2940" xd:FF="5937" xd:BRAM="1" xd:DSP="0"/>
+</xd:acceleratorMap>

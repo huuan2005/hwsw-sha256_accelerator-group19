@@ -1,0 +1,271 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'sha256_core'" level="0">
+<item name = "Date">Sat Jul  4 23:01:00 2026
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">sha256_core</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">15.00, 11.996, 1.88</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_sha256_transform_fu_359">sha256_transform, 307, 307, 307, 307, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- BLOCK_LOOP_READ_BLOCK">?, ?, 310, -, -, ?, no</column>
+<column name="- HASH_OUT">9, 9, 3, 1, 1, 8, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 434, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">1, -, 4343, 2216, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 290, -</column>
+<column name="Register">-, -, 1594, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, 5, 5, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="sha256_core_CTRL_s_axi_U">sha256_core_CTRL_s_axi, 0, 0, 74, 104, 0</column>
+<column name="sha256_core_mux_8dEe_U37">sha256_core_mux_8dEe, 0, 0, 0, 45, 0</column>
+<column name="grp_sha256_transform_fu_359">sha256_transform, 1, 0, 4269, 2067, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln73_fu_474_p2">+, 0, 0, 43, 36, 1</column>
+<column name="i_3_fu_689_p2">+, 0, 0, 13, 4, 1</column>
+<column name="i_fu_678_p2">+, 0, 0, 15, 5, 1</column>
+<column name="ap_block_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state6_io">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state7_io">and, 0, 0, 2, 1, 1</column>
+<column name="data_in_V_data_V_0_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="data_in_V_data_V_0_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="hash_out_V_data_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="hash_out_V_data_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="hash_out_V_last_V_1_load_A">and, 0, 0, 2, 1, 1</column>
+<column name="hash_out_V_last_V_1_load_B">and, 0, 0, 2, 1, 1</column>
+<column name="data_in_V_data_V_0_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="hash_out_V_data_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="hash_out_V_last_V_1_state_cmp_full">icmp, 0, 0, 8, 2, 1</column>
+<column name="icmp_ln73_fu_469_p2">icmp, 0, 0, 21, 36, 36</column>
+<column name="icmp_ln75_fu_512_p2">icmp, 0, 0, 11, 5, 6</column>
+<column name="icmp_ln83_fu_683_p2">icmp, 0, 0, 11, 4, 5</column>
+<column name="out_word_last_V_fu_713_p2">icmp, 0, 0, 9, 4, 3</column>
+<column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state8">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln73_1_fu_534_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_2_fu_542_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_3_fu_550_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_4_fu_558_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_5_fu_566_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_6_fu_574_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_7_fu_582_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln73_fu_526_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln75_fu_518_p3">select, 0, 0, 5, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">38, 7, 1, 7</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter2">9, 2, 1, 2</column>
+<column name="data_in_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="data_in_V_data_V_0_data_out">9, 2, 32, 64</column>
+<column name="data_in_V_data_V_0_state">15, 3, 2, 6</column>
+<column name="data_in_V_last_V_0_state">15, 3, 2, 6</column>
+<column name="hash_out_TDATA_blk_n">9, 2, 1, 2</column>
+<column name="hash_out_V_data_V_1_data_out">9, 2, 32, 64</column>
+<column name="hash_out_V_data_V_1_state">15, 3, 2, 6</column>
+<column name="hash_out_V_keep_V_1_state">15, 3, 2, 6</column>
+<column name="hash_out_V_last_V_1_data_out">9, 2, 1, 2</column>
+<column name="hash_out_V_last_V_1_state">15, 3, 2, 6</column>
+<column name="hash_out_V_strb_V_1_state">15, 3, 2, 6</column>
+<column name="i1_0_reg_348">9, 2, 4, 8</column>
+<column name="i_0_reg_337">9, 2, 5, 10</column>
+<column name="indvar_flatten_reg_230">9, 2, 36, 72</column>
+<column name="state_0_V_0_reg_325">9, 2, 32, 64</column>
+<column name="state_1_V_0_reg_313">9, 2, 32, 64</column>
+<column name="state_2_V_0_reg_301">9, 2, 32, 64</column>
+<column name="state_3_V_0_reg_289">9, 2, 32, 64</column>
+<column name="state_4_V_0_reg_277">9, 2, 32, 64</column>
+<column name="state_5_V_0_reg_265">9, 2, 32, 64</column>
+<column name="state_6_V_0_reg_253">9, 2, 32, 64</column>
+<column name="state_7_V_0_reg_241">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln73_reg_904">36, 0, 36, 0</column>
+<column name="ap_CS_fsm">6, 0, 6, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="data_in_V_data_V_0_payload_A">32, 0, 32, 0</column>
+<column name="data_in_V_data_V_0_payload_B">32, 0, 32, 0</column>
+<column name="data_in_V_data_V_0_sel_rd">1, 0, 1, 0</column>
+<column name="data_in_V_data_V_0_sel_wr">1, 0, 1, 0</column>
+<column name="data_in_V_data_V_0_state">2, 0, 2, 0</column>
+<column name="data_in_V_last_V_0_state">2, 0, 2, 0</column>
+<column name="grp_sha256_transform_fu_359_ap_start_reg">1, 0, 1, 0</column>
+<column name="hash_out_V_data_V_1_payload_A">32, 0, 32, 0</column>
+<column name="hash_out_V_data_V_1_payload_B">32, 0, 32, 0</column>
+<column name="hash_out_V_data_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="hash_out_V_data_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="hash_out_V_data_V_1_state">2, 0, 2, 0</column>
+<column name="hash_out_V_keep_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="hash_out_V_keep_V_1_state">2, 0, 2, 0</column>
+<column name="hash_out_V_last_V_1_payload_A">1, 0, 1, 0</column>
+<column name="hash_out_V_last_V_1_payload_B">1, 0, 1, 0</column>
+<column name="hash_out_V_last_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="hash_out_V_last_V_1_sel_wr">1, 0, 1, 0</column>
+<column name="hash_out_V_last_V_1_state">2, 0, 2, 0</column>
+<column name="hash_out_V_strb_V_1_sel_rd">1, 0, 1, 0</column>
+<column name="hash_out_V_strb_V_1_state">2, 0, 2, 0</column>
+<column name="i1_0_reg_348">4, 0, 4, 0</column>
+<column name="i_0_reg_337">5, 0, 5, 0</column>
+<column name="icmp_ln73_reg_900">1, 0, 1, 0</column>
+<column name="icmp_ln83_reg_1002">1, 0, 1, 0</column>
+<column name="icmp_ln83_reg_1002_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="indvar_flatten_reg_230">36, 0, 36, 0</column>
+<column name="out_word_data_V_reg_1011">32, 0, 32, 0</column>
+<column name="out_word_last_V_reg_1016">1, 0, 1, 0</column>
+<column name="select_ln73_1_reg_959">32, 0, 32, 0</column>
+<column name="select_ln73_2_reg_964">32, 0, 32, 0</column>
+<column name="select_ln73_3_reg_969">32, 0, 32, 0</column>
+<column name="select_ln73_4_reg_974">32, 0, 32, 0</column>
+<column name="select_ln73_5_reg_979">32, 0, 32, 0</column>
+<column name="select_ln73_6_reg_984">32, 0, 32, 0</column>
+<column name="select_ln73_7_reg_989">32, 0, 32, 0</column>
+<column name="select_ln73_reg_954">32, 0, 32, 0</column>
+<column name="select_ln75_reg_949">5, 0, 5, 0</column>
+<column name="state_0_V_0_reg_325">32, 0, 32, 0</column>
+<column name="state_0_V_reg_909">32, 0, 32, 0</column>
+<column name="state_1_V_0_reg_313">32, 0, 32, 0</column>
+<column name="state_1_V_reg_914">32, 0, 32, 0</column>
+<column name="state_2_V_0_reg_301">32, 0, 32, 0</column>
+<column name="state_2_V_reg_919">32, 0, 32, 0</column>
+<column name="state_3_V_0_reg_289">32, 0, 32, 0</column>
+<column name="state_3_V_reg_924">32, 0, 32, 0</column>
+<column name="state_4_V_0_reg_277">32, 0, 32, 0</column>
+<column name="state_4_V_reg_929">32, 0, 32, 0</column>
+<column name="state_5_V_0_reg_265">32, 0, 32, 0</column>
+<column name="state_5_V_reg_934">32, 0, 32, 0</column>
+<column name="state_6_V_0_reg_253">32, 0, 32, 0</column>
+<column name="state_6_V_reg_939">32, 0, 32, 0</column>
+<column name="state_7_V_0_reg_241">32, 0, 32, 0</column>
+<column name="state_7_V_reg_944">32, 0, 32, 0</column>
+<column name="tmp_data_V_10_fu_170">32, 0, 32, 0</column>
+<column name="tmp_data_V_11_fu_174">32, 0, 32, 0</column>
+<column name="tmp_data_V_12_fu_178">32, 0, 32, 0</column>
+<column name="tmp_data_V_13_fu_182">32, 0, 32, 0</column>
+<column name="tmp_data_V_14_fu_186">32, 0, 32, 0</column>
+<column name="tmp_data_V_15_fu_190">32, 0, 32, 0</column>
+<column name="tmp_data_V_1_fu_134">32, 0, 32, 0</column>
+<column name="tmp_data_V_2_fu_138">32, 0, 32, 0</column>
+<column name="tmp_data_V_3_fu_142">32, 0, 32, 0</column>
+<column name="tmp_data_V_4_fu_146">32, 0, 32, 0</column>
+<column name="tmp_data_V_5_fu_150">32, 0, 32, 0</column>
+<column name="tmp_data_V_6_fu_154">32, 0, 32, 0</column>
+<column name="tmp_data_V_7_fu_158">32, 0, 32, 0</column>
+<column name="tmp_data_V_8_fu_162">32, 0, 32, 0</column>
+<column name="tmp_data_V_9_fu_166">32, 0, 32, 0</column>
+<column name="tmp_data_V_fu_130">32, 0, 32, 0</column>
+<column name="tmp_reg_815">32, 0, 36, 4</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_CTRL_AWVALID">in, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_AWREADY">out, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_AWADDR">in, 5, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_WVALID">in, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_WREADY">out, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_WDATA">in, 32, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_WSTRB">in, 4, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_ARVALID">in, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_ARREADY">out, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_ARADDR">in, 5, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_RVALID">out, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_RREADY">in, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_RDATA">out, 32, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_RRESP">out, 2, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_BVALID">out, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_BREADY">in, 1, s_axi, CTRL, scalar</column>
+<column name="s_axi_CTRL_BRESP">out, 2, s_axi, CTRL, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, sha256_core, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, sha256_core, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, sha256_core, return value</column>
+<column name="data_in_TDATA">in, 32, axis, data_in_V_data_V, pointer</column>
+<column name="data_in_TVALID">in, 1, axis, data_in_V_last_V, pointer</column>
+<column name="data_in_TREADY">out, 1, axis, data_in_V_last_V, pointer</column>
+<column name="data_in_TLAST">in, 1, axis, data_in_V_last_V, pointer</column>
+<column name="data_in_TKEEP">in, 4, axis, data_in_V_keep_V, pointer</column>
+<column name="data_in_TSTRB">in, 4, axis, data_in_V_strb_V, pointer</column>
+<column name="hash_out_TDATA">out, 32, axis, hash_out_V_data_V, pointer</column>
+<column name="hash_out_TREADY">in, 1, axis, hash_out_V_data_V, pointer</column>
+<column name="hash_out_TVALID">out, 1, axis, hash_out_V_last_V, pointer</column>
+<column name="hash_out_TLAST">out, 1, axis, hash_out_V_last_V, pointer</column>
+<column name="hash_out_TKEEP">out, 4, axis, hash_out_V_keep_V, pointer</column>
+<column name="hash_out_TSTRB">out, 4, axis, hash_out_V_strb_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

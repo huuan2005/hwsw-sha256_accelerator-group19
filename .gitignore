@@ -1,0 +1,34 @@
+# Vivado junk files
+*.backup.*
+/Vivado/sha_block/hsa_block.cache/
+/Vivado/sha_block/hsa_block.hw/
+/Vivado/sha_block/hsa_block.ip_user_files/
+/Vivado/sha_block/hsa_block.runs/
+/Vivado/sha_block/hsa_block.sim/
+/Vivado/sha_block/hsa_block.gen/
+/Vivado/sha_block/.metadata/
+/Vivado/sha_block/RemoteSystemsTempFiles/
+/Vivado/sha_block/SDK.log
+/Vivado/sha_block/vivado.log
+/Vivado/sha_block/vivado.jou
+
+# HLS junk files
+/HLS/sha256_core/solution1/sim/
+/HLS/sha256_core/solution1/syn/
+/HLS/sha256_core/solution1/impl/verilog/
+/HLS/sha256_core/solution1/impl/vhdl/
+/HLS/sha256_core/solution1/impl/misc/
+/HLS/sha256_core/solution1/csim/
+/HLS/sha256_core/.apc/
+/HLS/sha256_core/.vivado_hls_log_all.xml
+/HLS/vivado_hls.log
+
+# SDK junk files
+/Vivado/sha_block/hsa_block.sdk/.metadata/
+/Vivado/sha_block/hsa_block.sdk/RemoteSystemsTempFiles/
+/Vivado/sha_block/hsa_block.sdk/SDK.log
+/Vivado/sha_block/hsa_block.sdk/webtalk/
+/Vivado/sha_block/hsa_block.sdk/sha256_app/Debug/
+/Vivado/sha_block/hsa_block.sdk/sha256_app/Release/
+/SDK/sha256_app/Debug/
+/SDK/sha256_app/Release/

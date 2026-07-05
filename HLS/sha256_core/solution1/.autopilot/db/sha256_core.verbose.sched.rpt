@@ -1,0 +1,331 @@
+
+
+================================================================
+== Vivado HLS Report for 'sha256_core'
+================================================================
+* Date:           Sat Jul  4 23:00:59 2026
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        sha256_core
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  15.00|    11.996|        1.88|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                         |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- BLOCK_LOOP_READ_BLOCK  |    ?|    ?|       310|          -|          -|     ?|    no    |
+        |- HASH_OUT               |    9|    9|         3|          1|          1|     8|    yes   |
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 5 6 7 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 5 
+4 --> 2 
+5 --> 8 6 
+6 --> 7 
+7 --> 5 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_data_V = alloca i32"   --->   Operation 9 'alloca' 'tmp_data_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_data_V_1 = alloca i32"   --->   Operation 10 'alloca' 'tmp_data_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_data_V_2 = alloca i32"   --->   Operation 11 'alloca' 'tmp_data_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_data_V_3 = alloca i32"   --->   Operation 12 'alloca' 'tmp_data_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%tmp_data_V_4 = alloca i32"   --->   Operation 13 'alloca' 'tmp_data_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%tmp_data_V_5 = alloca i32"   --->   Operation 14 'alloca' 'tmp_data_V_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%tmp_data_V_6 = alloca i32"   --->   Operation 15 'alloca' 'tmp_data_V_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_data_V_7 = alloca i32"   --->   Operation 16 'alloca' 'tmp_data_V_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_data_V_8 = alloca i32"   --->   Operation 17 'alloca' 'tmp_data_V_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_data_V_9 = alloca i32"   --->   Operation 18 'alloca' 'tmp_data_V_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_data_V_10 = alloca i32"   --->   Operation 19 'alloca' 'tmp_data_V_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_data_V_11 = alloca i32"   --->   Operation 20 'alloca' 'tmp_data_V_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_data_V_12 = alloca i32"   --->   Operation 21 'alloca' 'tmp_data_V_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_data_V_13 = alloca i32"   --->   Operation 22 'alloca' 'tmp_data_V_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_data_V_14 = alloca i32"   --->   Operation 23 'alloca' 'tmp_data_V_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_data_V_15 = alloca i32"   --->   Operation 24 'alloca' 'tmp_data_V_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %data_in_V_data_V), !map !84"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4* %data_in_V_keep_V), !map !90"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4* %data_in_V_strb_V), !map !94"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %data_in_V_last_V), !map !98"   --->   Operation 28 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %hash_out_V_data_V), !map !102"   --->   Operation 29 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4* %hash_out_V_keep_V), !map !106"   --->   Operation 30 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i4* %hash_out_V_strb_V), !map !110"   --->   Operation 31 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %hash_out_V_last_V), !map !114"   --->   Operation 32 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %num_blocks), !map !118"   --->   Operation 33 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @sha256_core_str) nounwind"   --->   Operation 34 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (1.00ns)   --->   "%num_blocks_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %num_blocks)"   --->   Operation 35 'read' 'num_blocks_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %data_in_V_data_V, i4* %data_in_V_keep_V, i4* %data_in_V_strb_V, i1* %data_in_V_last_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:57]   --->   Operation 36 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %hash_out_V_data_V, i4* %hash_out_V_keep_V, i4* %hash_out_V_strb_V, i1* %hash_out_V_last_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:58]   --->   Operation 37 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %num_blocks, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:59]   --->   Operation 38 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [5 x i8]* @p_str4, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:60]   --->   Operation 39 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %hash_out_V_data_V, i4* %hash_out_V_keep_V, i4* %hash_out_V_strb_V, i1* %hash_out_V_last_V, [5 x i8]* @p_str, i32 1, i32 1, [5 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:61]   --->   Operation 40 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%tmp = call i36 @_ssdm_op_BitConcatenate.i36.i32.i4(i32 %num_blocks_read, i4 0)"   --->   Operation 41 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (1.76ns)   --->   "br label %1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 42 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.71>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i36 [ 0, %0 ], [ %add_ln73, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 43 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%state_7_V_0 = phi i32 [ 1541459225, %0 ], [ %select_ln73, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 44 'phi' 'state_7_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%state_6_V_0 = phi i32 [ 528734635, %0 ], [ %select_ln73_1, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 45 'phi' 'state_6_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%state_5_V_0 = phi i32 [ -1694144372, %0 ], [ %select_ln73_2, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 46 'phi' 'state_5_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%state_4_V_0 = phi i32 [ 1359893119, %0 ], [ %select_ln73_3, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 47 'phi' 'state_4_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%state_3_V_0 = phi i32 [ -1521486534, %0 ], [ %select_ln73_4, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 48 'phi' 'state_3_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%state_2_V_0 = phi i32 [ 1013904242, %0 ], [ %select_ln73_5, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 49 'phi' 'state_2_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%state_1_V_0 = phi i32 [ -1150833019, %0 ], [ %select_ln73_6, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 50 'phi' 'state_1_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%state_0_V_0 = phi i32 [ 1779033703, %0 ], [ %select_ln73_7, %READ_BLOCK_end ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 51 'phi' 'state_0_V_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%tmp_data_V_load = load i32* %tmp_data_V"   --->   Operation 52 'load' 'tmp_data_V_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_data_V_1_load = load i32* %tmp_data_V_1"   --->   Operation 53 'load' 'tmp_data_V_1_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_data_V_2_load = load i32* %tmp_data_V_2"   --->   Operation 54 'load' 'tmp_data_V_2_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_data_V_3_load = load i32* %tmp_data_V_3"   --->   Operation 55 'load' 'tmp_data_V_3_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_data_V_4_load = load i32* %tmp_data_V_4"   --->   Operation 56 'load' 'tmp_data_V_4_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_data_V_5_load = load i32* %tmp_data_V_5"   --->   Operation 57 'load' 'tmp_data_V_5_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_data_V_6_load = load i32* %tmp_data_V_6"   --->   Operation 58 'load' 'tmp_data_V_6_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_data_V_7_load = load i32* %tmp_data_V_7"   --->   Operation 59 'load' 'tmp_data_V_7_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_data_V_8_load = load i32* %tmp_data_V_8"   --->   Operation 60 'load' 'tmp_data_V_8_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_data_V_9_load = load i32* %tmp_data_V_9"   --->   Operation 61 'load' 'tmp_data_V_9_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_data_V_10_load = load i32* %tmp_data_V_10"   --->   Operation 62 'load' 'tmp_data_V_10_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_data_V_11_load = load i32* %tmp_data_V_11"   --->   Operation 63 'load' 'tmp_data_V_11_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_data_V_12_load = load i32* %tmp_data_V_12"   --->   Operation 64 'load' 'tmp_data_V_12_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_data_V_13_load = load i32* %tmp_data_V_13"   --->   Operation 65 'load' 'tmp_data_V_13_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_data_V_14_load = load i32* %tmp_data_V_14"   --->   Operation 66 'load' 'tmp_data_V_14_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%tmp_data_V_15_load = load i32* %tmp_data_V_15"   --->   Operation 67 'load' 'tmp_data_V_15_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [2/2] (0.00ns)   --->   "%call_ret_dup = call fastcc { i32, i32, i32, i32, i32, i32, i32, i32 } @sha256_transform(i32 %state_0_V_0, i32 %state_1_V_0, i32 %state_2_V_0, i32 %state_3_V_0, i32 %state_4_V_0, i32 %state_5_V_0, i32 %state_6_V_0, i32 %state_7_V_0, i32 %tmp_data_V_load, i32 %tmp_data_V_1_load, i32 %tmp_data_V_2_load, i32 %tmp_data_V_3_load, i32 %tmp_data_V_4_load, i32 %tmp_data_V_5_load, i32 %tmp_data_V_6_load, i32 %tmp_data_V_7_load, i32 %tmp_data_V_8_load, i32 %tmp_data_V_9_load, i32 %tmp_data_V_10_load, i32 %tmp_data_V_11_load, i32 %tmp_data_V_12_load, i32 %tmp_data_V_13_load, i32 %tmp_data_V_14_load, i32 %tmp_data_V_15_load)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 68 'call' 'call_ret_dup' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 69 [1/1] (2.50ns)   --->   "%icmp_ln73 = icmp eq i36 %indvar_flatten, %tmp" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 69 'icmp' 'icmp_ln73' <Predicate = true> <Delay = 2.50> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 70 [1/1] (2.71ns)   --->   "%add_ln73 = add i36 %indvar_flatten, 1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 70 'add' 'add_ln73' <Predicate = true> <Delay = 2.71> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 4.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%i_0 = phi i5 [ 0, %0 ], [ %i, %READ_BLOCK_end ]"   --->   Operation 71 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/2] (2.55ns)   --->   "%call_ret_dup = call fastcc { i32, i32, i32, i32, i32, i32, i32, i32 } @sha256_transform(i32 %state_0_V_0, i32 %state_1_V_0, i32 %state_2_V_0, i32 %state_3_V_0, i32 %state_4_V_0, i32 %state_5_V_0, i32 %state_6_V_0, i32 %state_7_V_0, i32 %tmp_data_V_load, i32 %tmp_data_V_1_load, i32 %tmp_data_V_2_load, i32 %tmp_data_V_3_load, i32 %tmp_data_V_4_load, i32 %tmp_data_V_5_load, i32 %tmp_data_V_6_load, i32 %tmp_data_V_7_load, i32 %tmp_data_V_8_load, i32 %tmp_data_V_9_load, i32 %tmp_data_V_10_load, i32 %tmp_data_V_11_load, i32 %tmp_data_V_12_load, i32 %tmp_data_V_13_load, i32 %tmp_data_V_14_load, i32 %tmp_data_V_15_load)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 72 'call' 'call_ret_dup' <Predicate = true> <Delay = 2.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%state_0_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 73 'extractvalue' 'state_0_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%state_1_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 74 'extractvalue' 'state_1_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%state_2_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 2" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 75 'extractvalue' 'state_2_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%state_3_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 3" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 76 'extractvalue' 'state_3_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%state_4_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 4" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 77 'extractvalue' 'state_4_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%state_5_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 5" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 78 'extractvalue' 'state_5_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%state_6_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 6" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 79 'extractvalue' 'state_6_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%state_7_V = extractvalue { i32, i32, i32, i32, i32, i32, i32, i32 } %call_ret_dup, 7" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:79]   --->   Operation 80 'extractvalue' 'state_7_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "br i1 %icmp_ln73, label %.preheader.preheader, label %READ_BLOCK_begin" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 81 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([22 x i8]* @BLOCK_LOOP_READ_BLOC)"   --->   Operation 82 'specloopname' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (1.36ns)   --->   "%icmp_ln75 = icmp eq i5 %i_0, -16" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 83 'icmp' 'icmp_ln75' <Predicate = (!icmp_ln73)> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (1.21ns)   --->   "%select_ln75 = select i1 %icmp_ln75, i5 0, i5 %i_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 84 'select' 'select_ln75' <Predicate = (!icmp_ln73)> <Delay = 1.21> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.69ns)   --->   "%select_ln73 = select i1 %icmp_ln75, i32 %state_7_V, i32 %state_7_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 85 'select' 'select_ln73' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 86 [1/1] (0.69ns)   --->   "%select_ln73_1 = select i1 %icmp_ln75, i32 %state_6_V, i32 %state_6_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 86 'select' 'select_ln73_1' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 87 [1/1] (0.69ns)   --->   "%select_ln73_2 = select i1 %icmp_ln75, i32 %state_5_V, i32 %state_5_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 87 'select' 'select_ln73_2' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 88 [1/1] (0.69ns)   --->   "%select_ln73_3 = select i1 %icmp_ln75, i32 %state_4_V, i32 %state_4_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 88 'select' 'select_ln73_3' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 89 [1/1] (0.69ns)   --->   "%select_ln73_4 = select i1 %icmp_ln75, i32 %state_3_V, i32 %state_3_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 89 'select' 'select_ln73_4' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 90 [1/1] (0.69ns)   --->   "%select_ln73_5 = select i1 %icmp_ln75, i32 %state_2_V, i32 %state_2_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 90 'select' 'select_ln73_5' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 91 [1/1] (0.69ns)   --->   "%select_ln73_6 = select i1 %icmp_ln75, i32 %state_1_V, i32 %state_1_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 91 'select' 'select_ln73_6' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 92 [1/1] (0.69ns)   --->   "%select_ln73_7 = select i1 %icmp_ln75, i32 %state_0_V, i32 %state_0_V_0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73]   --->   Operation 92 'select' 'select_ln73_7' <Predicate = (!icmp_ln73)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str7) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 93 'specloopname' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([11 x i8]* @p_str7)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 94 'specregionbegin' 'tmp_7' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:76]   --->   Operation 95 'specpipeline' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%empty_10 = call { i32, i4, i4, i1 } @_ssdm_op_Read.axis.volatile.i32P.i4P.i4P.i1P(i32* %data_in_V_data_V, i4* %data_in_V_keep_V, i4* %data_in_V_strb_V, i1* %data_in_V_last_V)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 96 'read' 'empty_10' <Predicate = (!icmp_ln73)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%tmp_data_V_18 = extractvalue { i32, i4, i4, i1 } %empty_10, 0" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 97 'extractvalue' 'tmp_data_V_18' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln321 = trunc i5 %select_ln75 to i4" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 98 'trunc' 'trunc_ln321' <Predicate = (!icmp_ln73)> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (1.42ns)   --->   "switch i4 %trunc_ln321, label %branch15 [
+    i4 0, label %READ_BLOCK_begin.READ_BLOCK_end_crit_edge
+    i4 1, label %branch1
+    i4 2, label %branch2
+    i4 3, label %branch3
+    i4 4, label %branch4
+    i4 5, label %branch5
+    i4 6, label %branch6
+    i4 7, label %branch7
+    i4 -8, label %branch8
+    i4 -7, label %branch9
+    i4 -6, label %branch10
+    i4 -5, label %branch11
+    i4 -4, label %branch12
+    i4 -3, label %branch13
+    i4 -2, label %branch14
+  ]" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 99 'switch' <Predicate = (!icmp_ln73)> <Delay = 1.42>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_14" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 100 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 14)> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 101 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 14)> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_13" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 102 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 13)> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 103 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 13)> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_12" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 104 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 12)> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 105 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 12)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_11" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 106 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 11)> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 107 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 11)> <Delay = 0.00>
+ST_3 : Operation 108 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_10" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 108 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 10)> <Delay = 0.00>
+ST_3 : Operation 109 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 109 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 10)> <Delay = 0.00>
+ST_3 : Operation 110 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_9" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 110 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 9)> <Delay = 0.00>
+ST_3 : Operation 111 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 111 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 9)> <Delay = 0.00>
+ST_3 : Operation 112 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_8" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 112 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 8)> <Delay = 0.00>
+ST_3 : Operation 113 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 113 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 8)> <Delay = 0.00>
+ST_3 : Operation 114 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_7" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 114 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 7)> <Delay = 0.00>
+ST_3 : Operation 115 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 115 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 7)> <Delay = 0.00>
+ST_3 : Operation 116 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_6" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 116 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 6)> <Delay = 0.00>
+ST_3 : Operation 117 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 117 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 6)> <Delay = 0.00>
+ST_3 : Operation 118 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_5" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 118 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 5)> <Delay = 0.00>
+ST_3 : Operation 119 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 119 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 5)> <Delay = 0.00>
+ST_3 : Operation 120 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_4" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 120 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 4)> <Delay = 0.00>
+ST_3 : Operation 121 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 121 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 4)> <Delay = 0.00>
+ST_3 : Operation 122 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_3" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 122 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 3)> <Delay = 0.00>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 123 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 3)> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_2" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 124 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 2)> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 125 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 2)> <Delay = 0.00>
+ST_3 : Operation 126 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 126 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 1)> <Delay = 0.00>
+ST_3 : Operation 127 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 127 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 1)> <Delay = 0.00>
+ST_3 : Operation 128 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 128 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 0)> <Delay = 0.00>
+ST_3 : Operation 129 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 129 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 0)> <Delay = 0.00>
+ST_3 : Operation 130 [1/1] (0.00ns)   --->   "store i32 %tmp_data_V_18, i32* %tmp_data_V_15" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 130 'store' <Predicate = (!icmp_ln73 & trunc_ln321 == 15)> <Delay = 0.00>
+ST_3 : Operation 131 [1/1] (0.00ns)   --->   "br label %READ_BLOCK_end" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:77]   --->   Operation 131 'br' <Predicate = (!icmp_ln73 & trunc_ln321 == 15)> <Delay = 0.00>
+ST_3 : Operation 132 [1/1] (1.76ns)   --->   "br label %.preheader" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 132 'br' <Predicate = (icmp_ln73)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 1.78>
+ST_4 : Operation 133 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([11 x i8]* @p_str7, i32 %tmp_7)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:78]   --->   Operation 133 'specregionend' 'empty' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 134 [1/1] (1.78ns)   --->   "%i = add i5 %select_ln75, 1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 134 'add' 'i' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 135 [1/1] (0.00ns)   --->   "br label %1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 2.47>
+ST_5 : Operation 136 [1/1] (0.00ns)   --->   "%i1_0 = phi i4 [ %i_3, %HASH_OUT ], [ 0, %.preheader.preheader ]"   --->   Operation 136 'phi' 'i1_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 137 [1/1] (1.30ns)   --->   "%icmp_ln83 = icmp eq i4 %i1_0, -8" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 137 'icmp' 'icmp_ln83' <Predicate = true> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 138 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 138 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 139 [1/1] (1.73ns)   --->   "%i_3 = add i4 %i1_0, 1" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 139 'add' 'i_3' <Predicate = true> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 140 [1/1] (0.00ns)   --->   "br i1 %icmp_ln83, label %2, label %HASH_OUT" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 140 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 141 [1/1] (0.00ns)   --->   "%trunc_ln78 = trunc i4 %i1_0 to i3" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:86]   --->   Operation 141 'trunc' 'trunc_ln78' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+ST_5 : Operation 142 [1/1] (2.47ns)   --->   "%out_word_data_V = call i32 @_ssdm_op_Mux.ap_auto.8i32.i3(i32 %state_0_V, i32 %state_1_V, i32 %state_2_V, i32 %state_3_V, i32 %state_4_V, i32 %state_5_V, i32 %state_6_V, i32 %state_7_V, i3 %trunc_ln78)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:86]   --->   Operation 142 'mux' 'out_word_data_V' <Predicate = (!icmp_ln83)> <Delay = 2.47> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 143 [1/1] (1.30ns)   --->   "%out_word_last_V = icmp eq i4 %i1_0, 7" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:87]   --->   Operation 143 'icmp' 'out_word_last_V' <Predicate = (!icmp_ln83)> <Delay = 1.30> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 6 <SV = 4> <Delay = 0.00>
+ST_6 : Operation 144 [2/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i1P(i32* %hash_out_V_data_V, i4* %hash_out_V_keep_V, i4* %hash_out_V_strb_V, i1* %hash_out_V_last_V, i32 %out_word_data_V, i4 -1, i4 -1, i1 %out_word_last_V)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:90]   --->   Operation 144 'write' <Predicate = (!icmp_ln83)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 7 <SV = 5> <Delay = 0.00>
+ST_7 : Operation 145 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str8) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 145 'specloopname' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str8)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 146 'specregionbegin' 'tmp_5' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:84]   --->   Operation 147 'specpipeline' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+ST_7 : Operation 148 [1/2] (0.00ns)   --->   "call void @_ssdm_op_Write.axis.volatile.i32P.i4P.i4P.i1P(i32* %hash_out_V_data_V, i4* %hash_out_V_keep_V, i4* %hash_out_V_strb_V, i1* %hash_out_V_last_V, i32 %out_word_data_V, i4 -1, i4 -1, i1 %out_word_last_V)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:90]   --->   Operation 148 'write' <Predicate = (!icmp_ln83)> <Delay = 0.00> <Core = "AXI4Stream">   --->   Core 5 'AXI4Stream' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_7 : Operation 149 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str8, i32 %tmp_5)" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:91]   --->   Operation 149 'specregionend' 'empty_12' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+ST_7 : Operation 150 [1/1] (0.00ns)   --->   "br label %.preheader" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83]   --->   Operation 150 'br' <Predicate = (!icmp_ln83)> <Delay = 0.00>
+
+State 8 <SV = 4> <Delay = 0.00>
+ST_8 : Operation 151 [1/1] (0.00ns)   --->   "ret void" [../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:92]   --->   Operation 151 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 15ns, clock uncertainty: 1.88ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73) with incoming values : ('add_ln73', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73) [46]  (1.77 ns)
+
+ <State 2>: 2.71ns
+The critical path consists of the following:
+	'phi' operation ('indvar_flatten', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73) with incoming values : ('add_ln73', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73) [46]  (0 ns)
+	'add' operation ('add_ln73', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:73) [82]  (2.71 ns)
+
+ <State 3>: 4.01ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75) [55]  (0 ns)
+	'icmp' operation ('icmp_ln75', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75) [86]  (1.36 ns)
+	'select' operation ('select_ln75', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75) [87]  (1.22 ns)
+	blocking operation 1.43 ns on control path)
+
+ <State 4>: 1.78ns
+The critical path consists of the following:
+	'add' operation ('i', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:75) [153]  (1.78 ns)
+
+ <State 5>: 2.48ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:83) [158]  (0 ns)
+	'mux' operation ('out_word.data.V', ../../../../../Dell/Documents/HK2_2526/HW_SW/Project_ck/HLS/sha256.cpp:86) [168]  (2.48 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+ <State 8>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
